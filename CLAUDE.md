@@ -27,5 +27,7 @@ Everything runs in the browser — no backend, files never leave the machine.
 
 ## Deploy
 
-GitHub Pages via Actions (`.github/workflows/deploy.yml`); `base` is set in
-`vite.config.ts`. Push to `master` deploys.
+GitHub Pages via Actions (`.github/workflows/deploy.yml`). Push to `master`
+deploys. Live on the custom domain **pdf.zcloud.cz** — served from the root, so
+`base` in `vite.config.ts` is `/`, and `public/CNAME` pins the domain across
+redeploys. DNS: `pdf` CNAME → `zcloudcz.github.io` (zone zcloud.cz at Wedos).

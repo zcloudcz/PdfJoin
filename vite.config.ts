@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig(({ command }) => ({
-  // GitHub Pages serves the app from https://<user>.github.io/PdfJoin/
-  base: command === 'build' ? '/PdfJoin/' : '/',
-}));
+export default defineConfig({
+  // Served from the root of the custom domain pdf.zcloud.cz (see public/CNAME).
+  base: '/',
+});
