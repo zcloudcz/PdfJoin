@@ -1,5 +1,6 @@
 import '@fontsource/archivo-black';
 import Sortable from 'sortablejs';
+import { createFileId } from './id';
 import { getPdfPageCount, mergePdf } from './merge';
 import type { SourceFile } from './merge';
 import { addImagePage, addPdfPages, movePage, removePage } from './model';
@@ -48,7 +49,7 @@ function mimeOf(file: File): string {
 async function addFile(file: File): Promise<void> {
   const mime = mimeOf(file);
   const bytes = new Uint8Array(await file.arrayBuffer());
-  const id = crypto.randomUUID();
+  const id = createFileId();
 
   if (mime === 'application/pdf') {
     let pageCount: number;
