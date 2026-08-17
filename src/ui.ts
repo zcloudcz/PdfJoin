@@ -14,6 +14,9 @@ export interface Layout {
   errorList: HTMLElement;
   grid: HTMLElement;
   fileNameInput: HTMLInputElement;
+  pageSizeSelect: HTMLSelectElement;
+  fitSelect: HTMLSelectElement;
+  fitField: HTMLElement;
   mergeButton: HTMLButtonElement;
   status: HTMLElement;
 }
@@ -41,6 +44,21 @@ export function buildLayout(root: HTMLElement): Layout {
         <span>Název souboru</span>
         <input type="text" id="filename" value="joined.pdf" spellcheck="false" />
       </label>
+      <label class="option-field">
+        <span>Formát stránek</span>
+        <select id="page-size">
+          <option value="original">Původní</option>
+          <option value="a4">A4</option>
+          <option value="a3">A3</option>
+        </select>
+      </label>
+      <label class="option-field" id="fit-field" hidden>
+        <span>Přizpůsobení</span>
+        <select id="content-fit">
+          <option value="contain">Celý obsah</option>
+          <option value="cover">Vyplnit stránku</option>
+        </select>
+      </label>
       <button type="button" class="merge-button" id="merge-button" disabled>Sloučit</button>
       <p class="status" id="status" role="status"></p>
     </footer>
@@ -52,11 +70,17 @@ export function buildLayout(root: HTMLElement): Layout {
     errorList: root.querySelector('#error-list')!,
     grid: root.querySelector('#grid')!,
     fileNameInput: root.querySelector('#filename')!,
+    pageSizeSelect: root.querySelector('#page-size')!,
+    fitSelect: root.querySelector('#content-fit')!,
+    fitField: root.querySelector('#fit-field')!,
     mergeButton: root.querySelector('#merge-button')!,
     status: root.querySelector('#status')!,
   };
 
   root.querySelector('#pick-button')!.addEventListener('click', () => layout.fileInput.click());
+  layout.pageSizeSelect.addEventListener('change', () => {
+    layout.fitField.hidden = layout.pageSizeSelect.value === 'original';
+  });
   return layout;
 }
 

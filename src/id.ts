@@ -1,7 +1,4 @@
-interface CryptoIdSource {
-  randomUUID?: () => string;
-  getRandomValues(array: Uint8Array): Uint8Array;
-}
+type CryptoIdSource = Pick<Crypto, 'getRandomValues'> & Partial<Pick<Crypto, 'randomUUID'>>;
 
 export function createFileId(source: CryptoIdSource = globalThis.crypto): string {
   if (typeof source.randomUUID === 'function') return source.randomUUID();

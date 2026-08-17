@@ -2,7 +2,7 @@ import '@fontsource/archivo-black';
 import Sortable from 'sortablejs';
 import { createFileId } from './id';
 import { getPdfPageCount, mergePdf } from './merge';
-import type { SourceFile } from './merge';
+import type { ContentFit, PageSize, SourceFile } from './merge';
 import { addImagePage, addPdfPages, movePage, removePage } from './model';
 import type { PageRef } from './model';
 import { imageThumbnailUrl, renderPdfThumbnails } from './thumbnails';
@@ -138,7 +138,10 @@ async function merge(): Promise<void> {
   layout.mergeButton.disabled = true;
   layout.status.textContent = 'Slučuji…';
   try {
-    const bytes = await mergePdf(pages, files);
+    const bytes = await mergePdf(pages, files, {
+      pageSize: layout.pageSizeSelect.value as PageSize,
+      fit: layout.fitSelect.value as ContentFit,
+    });
     const name = layout.fileNameInput.value.trim() || 'joined.pdf';
     const fileName = name.toLowerCase().endsWith('.pdf') ? name : `${name}.pdf`;
     const url = URL.createObjectURL(new Blob([bytes as BlobPart], { type: 'application/pdf' }));
