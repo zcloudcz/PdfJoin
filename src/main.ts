@@ -150,7 +150,7 @@ async function merge(): Promise<void> {
     link.download = fileName;
     link.click();
     URL.revokeObjectURL(url);
-    layout.status.textContent = `Hotovo — ${fileName} stažen.`;
+    layout.status.textContent = `Hotovo: ${fileName} stažen.`;
   } catch {
     layout.status.textContent = 'Sloučení selhalo. Zkuste soubory přidat znovu.';
   } finally {
