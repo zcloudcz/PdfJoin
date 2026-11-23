@@ -1,0 +1,14 @@
+# PdfJoin
+
+> PdfJoin (https://pdf.zcloud.cz/) je bezplatný webový nástroj, který v prohlížeči sloučí soubory PDF a obrázky JPG a PNG do jednoho PDF.
+
+- Co dělá: spojí více PDF, JPG a PNG do jednoho PDF souboru; stránky lze seřadit přetažením, odstranit a převést na formát A4 nebo A3 (obsah lze vložit celý, nebo jím stránku vyplnit).
+- Cena: zdarma, bez registrace a bez účtu.
+- Soukromí: vše běží přímo v prohlížeči (pdf-lib, pdf.js), soubory se nenahrávají na žádný server.
+- Jazyk rozhraní: čeština.
+- Autor: ZCLOUD (Martin Zahálka, Boskovice, Česká republika).
+
+## Odkazy
+
+- [PdfJoin](https://pdf.zcloud.cz/): nástroj pro sloučení PDF
+- [ZCLOUD](https://zcloud.cz/): autor nástroje

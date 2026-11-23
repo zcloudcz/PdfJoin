@@ -3,11 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PdfJoin — sloučení PDF</title>
+    <title>PdfJoin | sloučení PDF a obrázků do jednoho PDF online</title>
+    <meta name="description" content="Spojte PDF, JPG a PNG do jednoho PDF přímo v prohlížeči. Stránky seřadíte přetažením, soubory se nikam nenahrávají. Zdarma a bez registrace." />
+    <link rel="canonical" href="https://pdf.zcloud.cz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pdf.zcloud.cz/" />
+    <meta property="og:title" content="PdfJoin | sloučení PDF a obrázků do jednoho PDF" />
+    <meta property="og:description" content="Spojte PDF, JPG a PNG do jednoho PDF přímo v prohlížeči. Stránky seřadíte přetažením, soubory se nikam nenahrávají." />
+    <meta property="og:locale" content="cs_CZ" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PdfJoin",
+  "url": "https://pdf.zcloud.cz/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requires JavaScript and a modern web browser.",
+  "description": "Spojení PDF souborů a obrázků JPG a PNG do jednoho PDF přímo v prohlížeči. Stránky lze seřadit přetažením a převést na formát A4 nebo A3. Soubory se nikam nenahrávají.",
+  "inLanguage": "cs",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CZK"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "ZCLOUD",
+    "url": "https://zcloud.cz/"
+  }
+}
+    </script>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- Static fallback for crawlers and no-JS visitors; buildLayout() replaces it on mount. -->
+      <header class="masthead">
+        <h1 class="wordmark">Pdf<span>Join</span></h1>
+        <p class="tagline">Spojte PDF a obrázky do jednoho souboru. Vše zůstává ve vašem prohlížeči.</p>
+      </header>
+      <p>PdfJoin sloučí soubory PDF, JPG a PNG do jednoho PDF. Stránky seřadíte přetažením a můžete je převést na formát A4 nebo A3.</p>
+      <p>Vše běží přímo ve vašem prohlížeči, soubory se nikam nenahrávají. Nástroj je zdarma a bez registrace.</p>
+      <noscript><p>Pro spuštění nástroje povolte JavaScript.</p></noscript>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
